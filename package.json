@@ -1,0 +1,38 @@
+{
+  "name": "demo-world",
+  "version": "0.0.0",
+  "description": "Demo life",
+  "main": "index.js",
+  "scripts": {
+    "start": "budo src/index.js:bundle.js --pushstate --dir=public --live -p esmify -t uglifyify -dv",
+    "build-css": "node-sass --output-style=compressed src/style/main.scss > public/style.css",
+    "css-watch": "node-sass --watch src/style/main.scss --source-map-embed public/style.css",
+    "build": "browserify -p esmify -p bundle-collapser/plugin src/index.js -g unassertify -g uglifyify -mc > public/bundle.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "htm": "^3.0.4",
+    "preact": "^10.5.5",
+    "pull-scan": "^1.0.0",
+    "pull-stream": "^3.6.14"
+  },
+  "devDependencies": {
+    "browserify": "^17.0.0",
+    "budo": "^11.6.4",
+    "bundle-collapser": "^1.4.0",
+    "esmify": "^2.1.1",
+    "node-sass": "^4.14.1",
+    "uglifyify": "^5.0.2",
+    "unassertify": "^2.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nichoth/demo-world.git"
+  },
+  "author": "Nick Thomas <nichoth@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nichoth/demo-world/issues"
+  },
+  "homepage": "https://github.com/nichoth/demo-world#readme"
+}
