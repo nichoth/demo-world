@@ -1,3 +1,3 @@
 # demo world
-Trying some things
+Trying preact
 
